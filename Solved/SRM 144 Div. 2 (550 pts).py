@@ -4,12 +4,12 @@ class BinaryCode(object):
         message_intlist = []
         for i in message:
             message_intlist.append(int(i))
-
+        
         decode_a = [0]
         decode_b = [1]
 
         # The section below runs the loops for decode_a
-
+        
         for i in range(len(message_intlist)):
             if i == 0:
                 x = message_intlist[i] - decode_a[i]
@@ -27,7 +27,7 @@ class BinaryCode(object):
                     decode_a.append(x)
 
         decode_a_string = ""
-        if decode_a != None:
+        if decode_a != None:            
             if decode_a[len(message_intlist)] != 0:
                 decode_a_string = "NONE"
             else:
@@ -39,7 +39,7 @@ class BinaryCode(object):
             decode_a_string = "NONE"
 
         # The section below runs the loops for decode_b
-
+        
         for i in range(len(message_intlist)):
             if i == 0:
                 x = message_intlist[i] - decode_b[i]
@@ -58,7 +58,7 @@ class BinaryCode(object):
                     break
                 else:
                     decode_b.append(x)
-
+        
         decode_b_string = ""
         if decode_b != None:
             if decode_b[len(message_intlist)] != 0:
